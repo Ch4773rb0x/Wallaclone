@@ -1,0 +1,35 @@
+Ya pude desplegar el proyecto final. Te comento un par de cosas: como
+la web la van a utilizar los chicos de ciberseguridad para hacer
+pentesting no le puse dns, deje la que me da amazon por defecto. Por
+lo mismo según tengo entendido esa dns no sirve para hacer un
+certificado SSL o TLS. Si necesitan que la web utilice el protocolo
+https avisame y veo de utilizar una dns dinámica gratuita para hacer
+el certificado.
+Trabajo final
+
+Por último, como es una web "clon" de wallapop, por la forma de
+nombrar los anuncios los bloqueadores de anuncios (como adBlock por
+ejemplo) bloquean la respuesta del servidor. Por lo que si los chicos
+utilizan alguna de estas extensiones tendrían que desactivarla si es
+que hacen pruebas en el navegador.
+
+La web esta desplegada en:
+18.235.237.96
+http://ec2-18-235-237-96.compute-1.amazonaws.com/
+
+Credenciales:
+user: usuario1,
+email: usuario1@example.com,
+pass: password1
+
+user: usuario2,
+email: usuario2@example.com,
+pass: password2
+[9:44]
+ya está!
+[9:44]
+eso me han escrito
+[9:45]
+no pongais la falta de https como fallo ya que está hecho así aposta
+[9:45]
+ya que es una web de pruebas

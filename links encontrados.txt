@@ -1,0 +1,57 @@
+general : https://urlquery.net/report/74bf777f-aa4f-48f6-b739-24fa2614822d
+
+links encontrados :
+
+http://18.235.237.96/robots.txt : robots.txt
+
+walla-clone-ux10pc.s3.us-east-1.amazonaws.com  | https://walla-clone-ux10pc.s3.us-east-1.amazonaws.com/config.json : El mensaje que aparece indica que el bucket S3 en 
+walla-clone-ux10pc.s3.us-east-1.amazonaws.com está 
+configurado con acceso restringido, mostrando el error AccessDenied. Esto significa que el contenido del bucket no es público, y solo aquellos con las credenciales 
+adecuadas pueden acceder. herramientas como S3Scanner o Bucket Finder podrian ayudar a obtener mas informacion.
+
+
+
+https://www.jsdelivr.com/ : jsDelivr es una red de distribución de contenido (CDN, por sus siglas en inglés) gratuita y de código abierto que permite a los desarrolladores alojar 
+y servir archivos estáticos, como bibliotecas JavaScript, hojas de estilo CSS, fuentes, imágenes y más.
+
+Características principales de jsDelivr
+CDN de múltiples redes: Usa una combinación de Cloudflare, Fastly y otros proveedores para garantizar velocidad y disponibilidad.
+Compatible con npm y GitHub: Permite acceder directamente a archivos de paquetes alojados en npm y repositorios de GitHub.
+Descarga y carga rápida: Optimiza la entrega de archivos utilizando múltiples servidores distribuidos globalmente.
+Uso sin configuración: No necesitas registrar una cuenta; solo usas las URLs que proporciona jsDelivr.
+
+
+
+
+
+http://18.235.237.96:3000/api/anuncios?page=1&limit=8 :
+parece ser un listado de anuncios clasificados que incluyen información como:
+
+ID del anuncio (_id)
+Nombre del producto o servicio (nombre)
+Imagen asociada (imagen)
+Descripción (descripcion)
+Precio (precio)
+Tipo de anuncio (tipoAnuncio), como "venta"
+Etiquetas o categorías (tags)
+Información del autor (usuario que publicó el anuncio), incluyendo su ID y correo electrónico
+Fecha de publicación (fechaPublicacion)
+Estado del anuncio (estado), que en este caso es "disponible"
+Además, al final del JSON aparecen datos sobre la paginación:
+
+Total de anuncios (total: 16)
+Página actual (page: 1)
+Total de páginas (totalPages: 2)
+Parece ser una API que devuelve un catálogo de productos o servicios en venta
+
+
+
+
+
+
+
+http://18.235.237.96/favicon.ico
+18.235.237.96/assets/index-cadb1698.js 
+http://18.235.237.96/assets/index-e48bd495.css
+https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css
+cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/fonts/bootstrap-icons.woff2?30af91bf14e37666a085fb8a161ff36d

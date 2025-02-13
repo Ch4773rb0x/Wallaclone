@@ -1,0 +1,115 @@
+**INFORME DE PENTESTING - DÍA 1**\
+**IP Objetivo:** 18.235.237.96
+
+---
+
+## **1. Resolución de DNS**
+
+Se intentó resolver el dominio **ec2-18-235-237-96.compute-1.amazonaws.com** mediante **nslookup**, pero el servidor DNS devolvió un error **NXDOMAIN**, lo que indica que el dominio no existe o no se puede resolver.
+
+---
+
+## **2. Escaneo de Puertos**
+
+Se realizó un escaneo de puertos con **RustScan** y **Nmap**, obteniendo los siguientes resultados:
+
+- **RustScan:** Identificó los puertos abiertos **3000 y 3853**.
+- **Nmap:** Confirmó los siguientes puertos abiertos:
+  - **80/tcp (HTTP)**
+  - **3000/tcp (PPP)**
+
+---
+
+## **3. Enumeración de Servicios**
+
+### **HTTP (Puerto 80)**
+
+- Servidor identificado: **nginx**
+- Respuesta HTTP/1.1 200 OK
+- Última modificación del contenido: **29 de enero de 2025**
+
+### **Puerto 3000**
+
+- Responde con **HTTP/1.1 200 OK**
+- Contiene varias cabeceras de seguridad:
+  - Content-Security-Policy
+  - Strict-Transport-Security
+  - X-Frame-Options
+
+### **Puerto 3853**
+
+- Se detectó **SSH (OpenSSH\_9.6p1 Ubuntu-3ubuntu13.5)**
+- Intento de conexión mediante **netcat** fue exitoso.
+- Intento de petición HTTP/0.9 con **curl** resultó en una conexión restablecida por la máquina remota.
+- Se ejecutó **nmap --script ssh2-enum-algos**, pero no se obtuvo información relevante.
+
+---
+
+## **4. Intento de Acceso por SSH**
+
+- Se intentó acceder con el comando:\
+  `ssh usuario@18.235.237.96 -p 3853`
+- La autenticación fue rechazada: **Permission denied (publickey)**
+
+---
+
+## **5. Información Adicional Encontrada**
+
+Se encontraron varias URLs y recursos relacionados con la IP objetivo:
+
+- **[http://18.235.237.96/robots.txt](http://18.235.237.96/robots.txt)**
+- **[http://18.235.237.96:3000/api/anuncios?page=1&limit=8](http://18.235.237.96:3000/api/anuncios?page=1\&limit=8)**
+  - Parece ser una API de anuncios clasificados con información de productos y servicios.
+- **[http://18.235.237.96/favicon.ico](http://18.235.237.96/favicon.ico)**
+- **[http://18.235.237.96/assets/index-cadb1698.js](http://18.235.237.96/assets/index-cadb1698.js)**
+- **[http://18.235.237.96/assets/index-e48bd495.css](http://18.235.237.96/assets/index-e48bd495.css)**
+- **[https://walla-clone-ux10pc.s3.us-east-1.amazonaws.com/config.json](https://walla-clone-ux10pc.s3.us-east-1.amazonaws.com/config.json)**
+  - Se detectó un bucket de Amazon S3 con acceso restringido (AccessDenied). Se podrían usar herramientas como **S3Scanner** o **Bucket Finder** para obtener más información.
+
+---
+
+## **6. Información de WHOIS**
+
+Se realizó una consulta **WHOIS** sobre la dirección IP **18.235.237.96**, revelando lo siguiente:
+
+- **Organización:** Amazon Technologies Inc.
+- **Ubicación:** Seattle, WA, EE.UU.
+- **Rango de red:** 18.32.0.0 - 18.255.255.255
+- **Detalles de abuso:** Se requiere incluir src IP, dest IP, puerto, fecha y otros detalles para reportar abuso.
+
+---
+
+## **7. Conclusiones**
+
+### **Puertos abiertos relevantes:**
+
+- **80 (HTTP):** Servidor **nginx**.
+- **3000 (posible API o servicio web)**
+- **3853 (SSH)**
+
+### **Servicios identificados:**
+
+- **nginx** en el puerto **80**
+- Posible aplicación web/API en el puerto **3000**
+- **Servidor SSH** en el puerto **3853**
+
+### **Posibles próximos pasos:**
+
+1. **Enumeración web:**
+   - Utilizar herramientas como **whatweb** o **gobuster** para identificar tecnologías y directorios expuestos.
+2. **Revisión de seguridad del servicio en el puerto 3000:**
+   - Analizar posibles vulnerabilidades en la API detectada.
+3. **Intentar ataques de fuerza bruta o autenticación alternativa en SSH:**
+   - Evaluar si se permiten credenciales por defecto o métodos de autenticación alternativos.
+4. **Análisis de tráfico HTTP:**
+   - Usar **Burp Suite** o **MITMProxy** para inspeccionar solicitudes y respuestas HTTP.
+5. **Investigación sobre el bucket S3 detectado:**
+   - Intentar enumerar archivos y permisos con herramientas como **S3Scanner**.
+
+---
+
+**Estado:** En progreso\
+**Próxima Fase:** Enumeración y exploración de vulnerabilidades
+
+**Fin del informe.**
+
