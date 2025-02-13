@@ -1,0 +1,15 @@
+- Nikto v2.5.0
+---------------------------------------------------------------------------
++ Target IP:          18.235.237.96
++ Target Hostname:    18.235.237.96
++ Target Port:        3000
++ Start Time:         2025-02-12 03:13:13 (GMT1)
+---------------------------------------------------------------------------
++ Server: No banner retrieved
++ /: Uncommon header 'origin-agent-cluster' found, with contents: ?1.
++ No CGI Directories found (use '-C all' to force check all possible dirs)
++ .: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type. See: https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/
++ Scan terminated: 0 error(s) and 2 item(s) reported on remote host
++ End Time:           2025-02-12 03:23:09 (GMT1) (596 seconds)
+---------------------------------------------------------------------------
++ 1 host(s) tested

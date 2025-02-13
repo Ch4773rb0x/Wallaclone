@@ -1,0 +1,31 @@
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-02-11 02:57 CET
+Nmap scan report for ec2-18-235-237-96.compute-1.amazonaws.com (18.235.237.96)
+Host is up (0.18s latency).
+Not shown: 998 filtered tcp ports (no-response)
+PORT     STATE SERVICE VERSION
+80/tcp   open  http    nginx
+|_http-title: Wallaclone
+3000/tcp open  http    Node.js Express framework
+|_http-title: Site doesn't have a title (text/html; charset=utf-8).
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose|storage-misc
+Running (JUST GUESSING): Linux 2.6.X|3.X|4.X|5.X (89%), Synology DiskStation Manager 5.X (86%)
+OS CPE: cpe:/o:linux:linux_kernel:2.6.39 cpe:/o:linux:linux_kernel:3.10 cpe:/o:linux:linux_kernel:4 cpe:/o:linux:linux_kernel:5 cpe:/a:synology:diskstation_manager:5.2
+Aggressive OS guesses: Linux 2.6.39 (89%), Linux 2.6.22 - 2.6.36 (86%), Linux 2.6.32 (86%), Linux 3.10 (86%), Linux 3.10 - 4.11 (86%), Linux 3.2 - 4.9 (86%), Linux 3.3 (86%), Linux 3.4 - 3.10 (86%), Linux 4.15 - 5.8 (86%), Linux 5.0 - 5.5 (86%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 12 hops
+
+TRACEROUTE (using port 80/tcp)
+HOP RTT       ADDRESS
+1   5.40 ms   liveboxfibra (192.168.1.1)
+2   ...
+3   5.50 ms   ns1.ibernet.com (212.106.195.66)
+4   22.51 ms  193.251.251.228
+5   11.18 ms  193.251.251.229
+6   102.03 ms 81.52.166.173
+7   102.02 ms 99.83.114.254
+8   ... 11
+12  102.88 ms ec2-18-235-237-96.compute-1.amazonaws.com (18.235.237.96)
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 101.67 seconds
